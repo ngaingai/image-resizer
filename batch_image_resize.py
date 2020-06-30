@@ -2,6 +2,8 @@ import os
 import shutil
 from PIL import Image
 
+RESIZE_HEIGHT = 300
+
 if __name__ == "__main__":
     dir = os.getcwd()
     resized_dir = dir + "_resized"
@@ -10,9 +12,13 @@ if __name__ == "__main__":
     #if os.path.exists(resized_dir):
     #   overwrite()
 
-    shutil.copytree(dir, resized_dir)   # Copies entire source directory
+    # shutil.copytree(dir, resized_dir)   # Copies entire source directory
     
-
+    im = Image.open("test.jpg")                               # Open the image
+    wpercent = (RESIZE_HEIGHT/float(im.size[1]))    # Calculate aspect ratio
+    RESIZE_WIDTH = int(im.size[0]*float(wpercent))  # Calculate new width
+    im = im.resize((RESIZE_WIDTH, RESIZE_HEIGHT), Image.ANTIALIAS)  # Resize the image based on new dimensions
+    im = im.save("test.jpg")                        # Save the resized image under the same file name
 
 # Check if script is running directly
 # if __name__ == "__main__":
