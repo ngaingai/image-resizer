@@ -13,12 +13,16 @@ From terminal:
 python batch_image_resize.py [/source_directory/] [resize_width] [resize_height]
 ```
 
-Important: Input '0' for resize_width if you want to resize according to height
+Example: Resize to width of 512
+```
+python batch_image_resize.py /my_photos/ 512
+```
 
-Example:
+Example: Resize to height of 512
+
+```
 python batch_image_resize.py /my_photos/ 0 512
-
-Will resize all images to a height of 512.
+```
 
 ### Prerequisites
 
