@@ -44,7 +44,8 @@ if __name__ == "__main__":
             # source_path = os.path.relpath(root + "/" + source_file, dir)
             source_path = os.path.relpath(root + "/" + source_file)
             print(source_path)
-            output_path = resized_dir + "/" + source_path
+            # output_path = resized_dir + "/" + source_path
+            output_path = resized_dir + "/" + os.path.relpath(root + "/" + source_file, dir)
             if extension == ".png" or extension == ".jpg" or extension == ".gif":
                 resize_image(source_path, output_path, extension)
                 converted += 1
