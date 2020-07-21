@@ -12,8 +12,8 @@ def resize_image(source_image, output_path, extension):
     output_file = os.path.splitext(source_file)[0]
 
     im = Image.open(source_image)                               # Open the image
-    wpercent = (RESIZE_HEIGHT/float(im.size[1]))    # Calculate aspect ratio
-    RESIZE_WIDTH = int(im.size[0]*float(wpercent))  # Calculate new width
+    wpercent = (RESIZE_HEIGHT/float(im.size[1]))                # Calculate aspect ratio
+    RESIZE_WIDTH = int(im.size[0]*float(wpercent))              # Calculate new width
     im = im.resize((RESIZE_WIDTH, RESIZE_HEIGHT), Image.ANTIALIAS)  # Resize the image based on new dimensions
 
     output_img = output_dir + "/" + output_file + extension
