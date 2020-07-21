@@ -28,10 +28,7 @@ def resize_image(source_image, output_path, extension):
     im.save(output_img)                                                 # Save the resized image under the same file name
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1:
-        dir = str(sys.argv[1])[:-1]
-    else:
-        dir = os.getcwd()
+    dir = str(sys.argv[1])[:-1]
     
     resized_dir = dir + "_resized"
     converted = 0
