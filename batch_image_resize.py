@@ -3,7 +3,7 @@ import sys
 import shutil
 from PIL import Image
 
-RESIZE_HEIGHT = 380
+RESIZE_HEIGHT = int(sys.argv[2])
 
 def resize_image(source_image, output_path, extension):
     output_dir = os.path.dirname(output_path)
