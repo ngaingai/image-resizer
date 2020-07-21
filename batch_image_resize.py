@@ -28,26 +28,19 @@ if __name__ == "__main__":
     else:
         dir = os.getcwd()
     
-    print(dir)
-    
     resized_dir = dir + "_resized"
-
-    print(resized_dir)
+    converted = 0
 
     if not os.path.exists(resized_dir):
         os.mkdir(resized_dir)
-    converted = 0
 
     for (root, dirs, files) in os.walk(dir, topdown=False):    # Traverse through directory tree
         for source_file in files: 
             extension = os.path.splitext(source_file)[1]
-            # source_path = os.path.relpath(root + "/" + source_file, dir)
             source_path = os.path.relpath(root + "/" + source_file)
-            print(source_path)
-            # output_path = resized_dir + "/" + source_path
             output_path = resized_dir + "/" + os.path.relpath(root + "/" + source_file, dir)
             if extension == ".png" or extension == ".jpg" or extension == ".gif":
                 resize_image(source_path, output_path, extension)
                 converted += 1
 
-    print("\nDone. \n" + str(converted) + " images converted\n")
+    print("\nDone! \n" + str(converted) + " images converted\n")
