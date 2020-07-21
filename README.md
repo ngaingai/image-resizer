@@ -1,4 +1,5 @@
 # Batch Image Resizer
+### Resizes all images in all subfolders
 <ul>
   <li>Takes a source folder</li>
   <li>Scans through the folder and all sub-folders</li>
